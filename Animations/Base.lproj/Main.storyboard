@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kky-S4-2Ch">
+                                <rect key="frame" x="277" y="415" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGU-Ji-vWR"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldu-up-XZ3">
+                                <rect key="frame" x="0.0" y="20" width="600" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJP-A4-zPd">
+                                        <rect key="frame" x="18" y="19" width="124.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.99258790919999995" blue="0.97981537799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lk-ql-wz2">
+                                        <rect key="frame" x="150" y="19" width="10.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.99258790919999995" blue="0.97981537799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBU-Fh-usz">
+                                        <rect key="frame" x="18" y="53.5" width="125" height="30"/>
+                                        <state key="normal" title="Mc Donalds $7.38">
+                                            <color key="titleColor" red="1" green="0.99258790919999995" blue="0.97981537799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HL-v6-44g">
+                                        <rect key="frame" x="18" y="91.5" width="107" height="30"/>
+                                        <state key="normal" title="Amazon $20.48">
+                                            <color key="titleColor" red="1" green="0.99258790919999995" blue="0.97981537799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UA8-dJ-yL5">
+                                        <rect key="frame" x="18" y="129.5" width="185" height="30"/>
+                                        <state key="normal" title="Unknown Merchant $12.00">
+                                            <color key="titleColor" red="1" green="0.99258790919999995" blue="0.97981537799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93517203280000005" green="0.2095839867" blue="0.13138372449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9HL-v6-44g" firstAttribute="top" secondItem="zBU-Fh-usz" secondAttribute="bottom" constant="8" id="0Hu-Yc-UkA"/>
+                                    <constraint firstItem="UA8-dJ-yL5" firstAttribute="leading" secondItem="ldu-up-XZ3" secondAttribute="leading" constant="18" id="1OU-q0-zJR"/>
+                                    <constraint firstItem="YJP-A4-zPd" firstAttribute="top" secondItem="ldu-up-XZ3" secondAttribute="top" constant="19" id="3GD-kW-pQB"/>
+                                    <constraint firstAttribute="height" priority="999" constant="60" id="8GN-RK-y5c"/>
+                                    <constraint firstItem="zBU-Fh-usz" firstAttribute="leading" secondItem="ldu-up-XZ3" secondAttribute="leading" constant="18" id="Do7-pi-4Fp"/>
+                                    <constraint firstItem="UA8-dJ-yL5" firstAttribute="top" secondItem="9HL-v6-44g" secondAttribute="bottom" constant="8" id="KBj-MH-AGm"/>
+                                    <constraint firstItem="1lk-ql-wz2" firstAttribute="leading" secondItem="YJP-A4-zPd" secondAttribute="trailing" constant="8" id="aj0-Jn-mV6"/>
+                                    <constraint firstItem="zBU-Fh-usz" firstAttribute="top" secondItem="YJP-A4-zPd" secondAttribute="bottom" constant="14" id="ann-PO-4Vy"/>
+                                    <constraint firstItem="YJP-A4-zPd" firstAttribute="leading" secondItem="ldu-up-XZ3" secondAttribute="leading" constant="18" id="bCt-Pb-iKv"/>
+                                    <constraint firstAttribute="centerY" secondItem="YJP-A4-zPd" secondAttribute="centerY" constant="0.5" id="lCK-XN-UNr"/>
+                                    <constraint firstItem="YJP-A4-zPd" firstAttribute="baseline" secondItem="1lk-ql-wz2" secondAttribute="baseline" id="nwe-aL-n7w"/>
+                                    <constraint firstItem="9HL-v6-44g" firstAttribute="leading" secondItem="ldu-up-XZ3" secondAttribute="leading" constant="18" id="odW-bx-lA2"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lCK-XN-UNr"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kky-S4-2Ch" secondAttribute="trailing" constant="261" id="5Fs-U1-jSf"/>
+                            <constraint firstItem="ldu-up-XZ3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" priority="999" id="6ub-AV-OdT"/>
+                            <constraint firstItem="ldu-up-XZ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8HH-Ml-Aof"/>
+                            <constraint firstItem="ldu-up-XZ3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="TeW-bh-CvW"/>
+                            <constraint firstItem="ldu-up-XZ3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" priority="999" id="Yd7-H7-bPG"/>
+                            <constraint firstItem="Kky-S4-2Ch" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="261" id="e4q-f0-Ioj"/>
+                            <constraint firstItem="ldu-up-XZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jCD-0i-cJR"/>
+                            <constraint firstAttribute="centerX" secondItem="Kky-S4-2Ch" secondAttribute="centerX" id="nic-my-ewu"/>
+                            <constraint firstAttribute="trailing" secondItem="ldu-up-XZ3" secondAttribute="trailing" id="o3h-5L-p7U"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kky-S4-2Ch" secondAttribute="bottom" constant="155" id="vWv-hf-HLB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6ub-AV-OdT"/>
+                                <exclude reference="TeW-bh-CvW"/>
+                                <exclude reference="Yd7-H7-bPG"/>
+                                <exclude reference="5Fs-U1-jSf"/>
+                                <exclude reference="e4q-f0-Ioj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="arrowLabel" destination="1lk-ql-wz2" id="vhf-Ho-6dc"/>
+                        <outlet property="heightConstraint" destination="8GN-RK-y5c" id="wcM-3Y-hwO"/>
+                        <outlet property="largerHeightConstraint" destination="6ub-AV-OdT" id="gdB-Qi-K9V"/>
+                        <outletCollection property="buttons" destination="zBU-Fh-usz" collectionClass="NSMutableArray" id="33G-8z-AaX"/>
+                        <outletCollection property="buttons" destination="9HL-v6-44g" collectionClass="NSMutableArray" id="N41-85-N8s"/>
+                        <outletCollection property="buttons" destination="UA8-dJ-yL5" collectionClass="NSMutableArray" id="E6d-8s-Ysu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
