@@ -13,6 +13,7 @@
 		62186FB21B41B429001430F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62186FB11B41B429001430F5 /* Images.xcassets */; };
 		62186FB51B41B429001430F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62186FB31B41B429001430F5 /* LaunchScreen.xib */; };
 		62186FC11B41B42A001430F5 /* AnimationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62186FC01B41B42A001430F5 /* AnimationsTests.swift */; };
+		62186FCB1B41E40E001430F5 /* TransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62186FCA1B41E40E001430F5 /* TransactionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		62186FBA1B41B429001430F5 /* AnimationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62186FBF1B41B42A001430F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62186FC01B41B42A001430F5 /* AnimationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsTests.swift; sourceTree = "<group>"; };
+		62186FCA1B41E40E001430F5 /* TransactionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				62186FAA1B41B429001430F5 /* AppDelegate.swift */,
 				62186FAC1B41B429001430F5 /* ViewController.swift */,
 				62186FAE1B41B429001430F5 /* Main.storyboard */,
+				62186FCA1B41E40E001430F5 /* TransactionView.xib */,
 				62186FB11B41B429001430F5 /* Images.xcassets */,
 				62186FB31B41B429001430F5 /* LaunchScreen.xib */,
 				62186FA81B41B429001430F5 /* Supporting Files */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62186FB01B41B429001430F5 /* Main.storyboard in Resources */,
+				62186FCB1B41E40E001430F5 /* TransactionView.xib in Resources */,
 				62186FB51B41B429001430F5 /* LaunchScreen.xib in Resources */,
 				62186FB21B41B429001430F5 /* Images.xcassets in Resources */,
 			);
