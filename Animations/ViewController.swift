@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     
     var viewExpaned = false
+    var blurView: UIView!
+    var popupView: UIView!
+    
+    @IBAction func closeTransactionViewTapped(sender: AnyObject) {
+        blurView.removeFromSuperview()
+        popupView.removeFromSuperview()
+    }
     
     @IBAction func animateButtonTapped(sender: AnyObject) {
         viewExpaned = !viewExpaned
@@ -36,29 +43,33 @@ class ViewController: UIViewController {
     }
  
     @IBAction func transactionButtonTapped(sender: AnyObject) {
-        var view = NSBundle.mainBundle().loadNibNamed("TransactionView", owner: self, options: nil)[0] as! UIView
-        view.center = CGPointMake(-300, -300)
-        self.view.addSubview(view)
+        popupView = NSBundle.mainBundle().loadNibNamed("TransactionView", owner: self, options: nil)[0] as! UIView
+        popupView.center = CGPointMake(-300, -300)
+        self.view.addSubview(popupView)
         
-        UIView.animateWithDuration(0.45, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
-            view.center = self.view.center
+        let blurEffect = UIBlurEffect(style: .Light)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        self.view.insertSubview(self.blurView, atIndex: self.view.subviews.count-1)
+        
+        self.view.addConstraint(NSLayoutConstraint(item: self.blurView,
+            attribute: .Width, relatedBy: .Equal,
+            toItem: self.blurView.superview, attribute: .Width,
+            multiplier: 1, constant: 0))
+        
+        self.view.layoutIfNeeded()
+        
+        self.view.addConstraint(NSLayoutConstraint(item: self.blurView,
+            attribute: .Height, relatedBy: .Equal,
+            toItem: self.blurView.superview, attribute: .Height,
+            multiplier: 1, constant: 0))
+        
+        UIView.animateWithDuration(0.75, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
+            self.popupView.center = self.view.center
+            self.view.layoutIfNeeded()
         }, completion: nil)
         
-        // 1
-        let blurEffect = UIBlurEffect(style: .Light)
-        // 2
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        // 3
-        blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.view.insertSubview(blurView, atIndex: self.view.subviews.count-1)
-                
-        self.view.addConstraint(NSLayoutConstraint(item: blurView,
-            attribute: .Height, relatedBy: .Equal,
-            toItem: blurView.superview, attribute: .Height,
-            multiplier: 1, constant: 0))
-        self.view.addConstraint(NSLayoutConstraint(item: blurView,
-            attribute: .Width, relatedBy: .Equal,
-            toItem: blurView.superview, attribute: .Width,
-            multiplier: 1, constant: 0))
+  
     }
 }
