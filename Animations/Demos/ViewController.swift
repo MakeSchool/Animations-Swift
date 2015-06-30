@@ -34,9 +34,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func closeTransactionViewTapped(sender: AnyObject) {
-        blurView.removeFromSuperview()
         popupView.removeFromSuperview()
         self.view.removeGestureRecognizer(gestureRecognizer)
+        
+        UIView.animateWithDuration(0.35, animations: { () -> Void in
+            self.blurView.alpha = 0.0
+        }, completion: { (Bool) -> Void in
+            self.blurView.removeFromSuperview()
+        })
     }
     
     
@@ -60,6 +65,14 @@ class ViewController: UIViewController {
             animator.addBehavior(attachmentBehavior)
             dynamicItemBehavior = UIDynamicItemBehavior(items: [popupView])
             animator.addBehavior(dynamicItemBehavior)
+            
+            dynamicItemBehavior.action = {() -> Void in
+                if (!CGRectIntersectsRect(self.popupView.frame, self.view.frame)) {
+                    self.closeTransactionViewTapped(self)
+                    self.draggingPopup = false
+                    self.animator.removeAllBehaviors()
+                }
+            }
         } else if (recognizer.state == .Changed) {
             if (draggingPopup) {
                 attachmentBehavior.anchorPoint = recognizer.locationInView(self.view)
@@ -77,6 +90,7 @@ class ViewController: UIViewController {
             let distance = hypotf(Float(p1.x) - Float(p2.x), Float(p1.y) - Float(p2.y))
             
             if (distance > 50) {
+                draggingPopup = false
                 gravityBehavior = UIGravityBehavior(items: [popupView])
                 animator.addBehavior(gravityBehavior)
                 

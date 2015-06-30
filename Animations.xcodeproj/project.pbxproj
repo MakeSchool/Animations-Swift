@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		62186FAB1B41B429001430F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62186FAA1B41B429001430F5 /* AppDelegate.swift */; };
-		62186FAD1B41B429001430F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62186FAC1B41B429001430F5 /* ViewController.swift */; };
 		62186FB01B41B429001430F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62186FAE1B41B429001430F5 /* Main.storyboard */; };
 		62186FB21B41B429001430F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62186FB11B41B429001430F5 /* Images.xcassets */; };
 		62186FB51B41B429001430F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62186FB31B41B429001430F5 /* LaunchScreen.xib */; };
 		62186FC11B41B42A001430F5 /* AnimationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62186FC01B41B42A001430F5 /* AnimationsTests.swift */; };
 		62186FCB1B41E40E001430F5 /* TransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62186FCA1B41E40E001430F5 /* TransactionView.xib */; };
+		624262861B43584E00005CE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624262851B43584E00005CE3 /* ViewController.swift */; };
+		624262881B43586500005CE3 /* AnimationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624262871B43586500005CE3 /* AnimationsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,6 @@
 		62186FA51B41B429001430F5 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62186FA91B41B429001430F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62186FAA1B41B429001430F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		62186FAC1B41B429001430F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62186FAF1B41B429001430F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62186FB11B41B429001430F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		62186FB41B41B429001430F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		62186FBF1B41B42A001430F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62186FC01B41B42A001430F5 /* AnimationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsTests.swift; sourceTree = "<group>"; };
 		62186FCA1B41E40E001430F5 /* TransactionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionView.xib; sourceTree = "<group>"; };
+		624262851B43584E00005CE3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		624262871B43586500005CE3 /* AnimationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 		62186FA71B41B429001430F5 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				624262841B43584E00005CE3 /* Demos */,
 				62186FAA1B41B429001430F5 /* AppDelegate.swift */,
-				62186FAC1B41B429001430F5 /* ViewController.swift */,
+				624262871B43586500005CE3 /* AnimationsTableViewController.swift */,
 				62186FAE1B41B429001430F5 /* Main.storyboard */,
 				62186FCA1B41E40E001430F5 /* TransactionView.xib */,
 				62186FB11B41B429001430F5 /* Images.xcassets */,
@@ -113,6 +116,14 @@
 				62186FBF1B41B42A001430F5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		624262841B43584E00005CE3 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				624262851B43584E00005CE3 /* ViewController.swift */,
+			);
+			path = Demos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,8 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62186FAD1B41B429001430F5 /* ViewController.swift in Sources */,
+				624262861B43584E00005CE3 /* ViewController.swift in Sources */,
 				62186FAB1B41B429001430F5 /* AppDelegate.swift in Sources */,
+				624262881B43586500005CE3 /* AnimationsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +427,7 @@
 				62186FC61B41B42A001430F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62186FC71B41B42A001430F5 /* Build configuration list for PBXNativeTarget "AnimationsTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +436,7 @@
 				62186FC91B41B42A001430F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
