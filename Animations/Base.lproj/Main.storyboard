@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hNr-fZ-alC">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -33,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="584" y="416"/>
         </scene>
-        <!--View Controller-->
+        <!--Complex Demo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ComplexDemoViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -151,6 +152,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1352" y="416"/>
+        </scene>
+        <!--Basic Constraint Animation View Controller-->
+        <scene sceneID="D7W-LO-Ddz">
+            <objects>
+                <viewController storyboardIdentifier="BasicConstraintAnimationViewController" id="xts-h4-g5r" customClass="BasicConstraintAnimationViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ctk-gV-RG7"/>
+                        <viewControllerLayoutGuide type="bottom" id="fCa-0n-UKD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qn3-hz-hs6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpm-c3-MLc">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="600"/>
+                                <color key="backgroundColor" red="0.93517203280000005" green="0.2095839867" blue="0.13138372449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="p4K-Sb-Ap7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fCa-0n-UKD" firstAttribute="top" secondItem="tpm-c3-MLc" secondAttribute="bottom" id="9ty-bi-GPP"/>
+                            <constraint firstItem="tpm-c3-MLc" firstAttribute="leading" secondItem="qn3-hz-hs6" secondAttribute="leading" id="Vfh-SD-JYQ"/>
+                            <constraint firstItem="tpm-c3-MLc" firstAttribute="top" secondItem="qn3-hz-hs6" secondAttribute="top" id="vmZ-65-hnv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="widthConstraint" destination="p4K-Sb-Ap7" id="y8w-P8-6bW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdL-dI-2pQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="1880"/>
+        </scene>
+        <!--Advanced Constraint View Controller-->
+        <scene sceneID="xfD-iD-hqx">
+            <objects>
+                <viewController storyboardIdentifier="AdvancedConstraintViewController" id="VjX-in-vY1" customClass="AdvancedConstraintViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sag-dl-HEM"/>
+                        <viewControllerLayoutGuide type="bottom" id="dFL-Kb-TmU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tHO-bZ-qqH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqO-uq-EcV">
+                                <rect key="frame" x="133" y="260" width="334" height="79"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="e5N-Hp-yGt"/>
+                                    <constraint firstAttribute="width" constant="51" id="kot-Bw-Re5"/>
+                                    <constraint firstAttribute="height" constant="431" id="wec-6J-o7k"/>
+                                    <constraint firstAttribute="width" constant="334" id="zE4-wD-4jZ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kot-Bw-Re5"/>
+                                        <exclude reference="wec-6J-o7k"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="uqO-uq-EcV" secondAttribute="centerY" constant="0.5" id="Euw-q0-Dpn"/>
+                            <constraint firstItem="uqO-uq-EcV" firstAttribute="leading" secondItem="tHO-bZ-qqH" secondAttribute="leadingMargin" constant="33" id="Ned-Hr-1j1"/>
+                            <constraint firstItem="uqO-uq-EcV" firstAttribute="top" secondItem="Sag-dl-HEM" secondAttribute="bottom" constant="64" id="NoA-c0-tOO"/>
+                            <constraint firstAttribute="centerX" secondItem="uqO-uq-EcV" secondAttribute="centerX" id="XAn-Rp-nV1"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ned-Hr-1j1"/>
+                                <exclude reference="NoA-c0-tOO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outletCollection property="initialConstraints" destination="e5N-Hp-yGt" collectionClass="NSMutableArray" id="qxq-Du-wnG"/>
+                        <outletCollection property="initialConstraints" destination="zE4-wD-4jZ" collectionClass="NSMutableArray" id="DW9-f1-CDG"/>
+                        <outletCollection property="initialConstraints" destination="XAn-Rp-nV1" collectionClass="NSMutableArray" id="u34-bi-ZGq"/>
+                        <outletCollection property="finalConstraints" destination="kot-Bw-Re5" id="uwy-FY-Hbf"/>
+                        <outletCollection property="finalConstraints" destination="wec-6J-o7k" id="diR-sS-sYO"/>
+                        <outletCollection property="initialConstraints" destination="Euw-q0-Dpn" id="M5U-5E-avG"/>
+                        <outletCollection property="finalConstraints" destination="Ned-Hr-1j1" id="1BL-3y-cRN"/>
+                        <outletCollection property="finalConstraints" destination="NoA-c0-tOO" id="Znu-Ge-Bta"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Vc-Ey-AUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="2598"/>
+        </scene>
+        <!--Basic Animation View Controller-->
+        <scene sceneID="VIb-uS-nLt">
+            <objects>
+                <viewController storyboardIdentifier="BasicAnimationViewController" id="4U6-wx-4Tx" customClass="BasicAnimationViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oVf-qh-39w"/>
+                        <viewControllerLayoutGuide type="bottom" id="aCm-i6-7gD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VYG-tq-eAM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kj-hM-fUW">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.99607843139999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="j4t-6g-5ku"/>
+                                    <constraint firstAttribute="width" constant="100" id="z2V-hI-dOn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6Kj-hM-fUW" secondAttribute="centerX" id="aJ8-ec-oaB"/>
+                            <constraint firstAttribute="centerY" secondItem="6Kj-hM-fUW" secondAttribute="centerY" id="ixR-51-bht"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="square" destination="6Kj-hM-fUW" id="Fll-5M-193"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qtu-Ry-c13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="1109"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f4O-gX-Nx5">

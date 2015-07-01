@@ -13,8 +13,11 @@
 		62186FB51B41B429001430F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62186FB31B41B429001430F5 /* LaunchScreen.xib */; };
 		62186FC11B41B42A001430F5 /* AnimationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62186FC01B41B42A001430F5 /* AnimationsTests.swift */; };
 		62186FCB1B41E40E001430F5 /* TransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62186FCA1B41E40E001430F5 /* TransactionView.xib */; };
-		624262861B43584E00005CE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624262851B43584E00005CE3 /* ViewController.swift */; };
+		624262861B43584E00005CE3 /* ComplexDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624262851B43584E00005CE3 /* ComplexDemoViewController.swift */; };
 		624262881B43586500005CE3 /* AnimationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624262871B43586500005CE3 /* AnimationsTableViewController.swift */; };
+		6242628D1B44486100005CE3 /* BasicAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6242628C1B44486100005CE3 /* BasicAnimationViewController.swift */; };
+		6242628F1B445A3400005CE3 /* BasicConstraintAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6242628E1B445A3400005CE3 /* BasicConstraintAnimationViewController.swift */; };
+		624262D71B44986200005CE3 /* AdvancedConstraintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624262D61B44986200005CE3 /* AdvancedConstraintViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +41,11 @@
 		62186FBF1B41B42A001430F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62186FC01B41B42A001430F5 /* AnimationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsTests.swift; sourceTree = "<group>"; };
 		62186FCA1B41E40E001430F5 /* TransactionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionView.xib; sourceTree = "<group>"; };
-		624262851B43584E00005CE3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		624262851B43584E00005CE3 /* ComplexDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexDemoViewController.swift; sourceTree = "<group>"; };
 		624262871B43586500005CE3 /* AnimationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsTableViewController.swift; sourceTree = "<group>"; };
+		6242628C1B44486100005CE3 /* BasicAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimationViewController.swift; sourceTree = "<group>"; };
+		6242628E1B445A3400005CE3 /* BasicConstraintAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConstraintAnimationViewController.swift; sourceTree = "<group>"; };
+		624262D61B44986200005CE3 /* AdvancedConstraintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedConstraintViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +127,10 @@
 		624262841B43584E00005CE3 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
-				624262851B43584E00005CE3 /* ViewController.swift */,
+				624262851B43584E00005CE3 /* ComplexDemoViewController.swift */,
+				6242628C1B44486100005CE3 /* BasicAnimationViewController.swift */,
+				6242628E1B445A3400005CE3 /* BasicConstraintAnimationViewController.swift */,
+				624262D61B44986200005CE3 /* AdvancedConstraintViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -170,6 +179,7 @@
 		62186F9D1B41B429001430F5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Benjamin Encz";
 				TargetAttributes = {
@@ -227,9 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				624262861B43584E00005CE3 /* ViewController.swift in Sources */,
+				624262861B43584E00005CE3 /* ComplexDemoViewController.swift in Sources */,
+				6242628F1B445A3400005CE3 /* BasicConstraintAnimationViewController.swift in Sources */,
 				62186FAB1B41B429001430F5 /* AppDelegate.swift in Sources */,
+				6242628D1B44486100005CE3 /* BasicAnimationViewController.swift in Sources */,
 				624262881B43586500005CE3 /* AnimationsTableViewController.swift in Sources */,
+				624262D71B44986200005CE3 /* AdvancedConstraintViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Animations/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Animations/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

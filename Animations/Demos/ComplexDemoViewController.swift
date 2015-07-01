@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ComplexDemoViewController: UIViewController {
 
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var largerHeightConstraint: NSLayoutConstraint!

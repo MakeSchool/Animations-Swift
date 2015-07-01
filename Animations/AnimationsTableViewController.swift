@@ -10,29 +10,27 @@ import UIKit
 
 class AnimationsTableViewController: UITableViewController {
     
+    let demos = [("Simple Animation", "BasicAnimationViewController"), ("Basic Constraint Demo", "BasicConstraintAnimationViewController"), ("Advanced Constraint Demo", "AdvancedConstraintViewController"), ("Complex Demo", "ViewController")]
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 1
+        return demos.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Default") as! UITableViewCell
-        cell.textLabel?.text = "Complex Demo"
+        cell.textLabel?.text = demos[indexPath.row].0
         
         return cell;
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ViewController") as! UIViewController
-        navigationController?.pushViewController(vc, animated: false)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(demos[indexPath.row].1) as! UIViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
