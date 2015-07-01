@@ -104,7 +104,7 @@ class ComplexDemoViewController: UIViewController {
             
             startDragging(recognizer.locationInView(self.view))
         } else if (recognizer.state == .Changed) {
-            if (draggingPopup) {
+            if (draggingPopup && attachmentBehavior != nil) {
                 attachmentBehavior.anchorPoint = recognizer.locationInView(self.view)
             }
         } else if (recognizer.state == .Ended || recognizer.state == .Cancelled) {
