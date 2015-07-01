@@ -10,22 +10,27 @@ import UIKit
 
 class ComplexDemoViewController: UIViewController {
 
+    // IBOutlets
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var largerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var arrowLabel: UILabel!
-    
+    @IBOutlet weak var arrowButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
     
-    var viewExpaned = false
+    // View References
     var blurView: UIView!
     var popupView: UIView!
+    
+    // UIKit Dynamics
     var snapBehavior : UISnapBehavior!
     var animator: UIDynamicAnimator!
     var attachmentBehavior: UIAttachmentBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
     var gestureRecognizer: UIPanGestureRecognizer!
     var gravityBehavior: UIGravityBehavior!
+
+    // View State
     var draggingPopup = false
+    var viewExpaned = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +109,6 @@ class ComplexDemoViewController: UIViewController {
     @IBAction func animateButtonTapped(sender: AnyObject) {
         viewExpaned = !viewExpaned
         heightConstraint.active = !viewExpaned
-        largerHeightConstraint.active = viewExpaned
         
         UIView.animateWithDuration(0.25, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
             
@@ -112,7 +116,7 @@ class ComplexDemoViewController: UIViewController {
                 button.alpha = self.viewExpaned ? 1.0 : 0.0
             }
             
-            self.arrowLabel.transform = self.viewExpaned ? CGAffineTransformMakeRotation(CGFloat(M_PI_2)) : CGAffineTransformMakeRotation(0)
+            self.arrowButton.transform = self.viewExpaned ? CGAffineTransformMakeRotation(CGFloat(M_PI_2)) : CGAffineTransformMakeRotation(0)
             self.view.layoutIfNeeded()
         }, completion: nil)
     }

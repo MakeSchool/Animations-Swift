@@ -10,7 +10,7 @@ import UIKit
 
 class AnimationsTableViewController: UITableViewController {
     
-    let demos = [("Simple Animation", "BasicAnimationViewController"), ("Basic Constraint Demo", "BasicConstraintAnimationViewController"), ("Advanced Constraint Demo", "AdvancedConstraintViewController"), ("Complex Demo", "ViewController")]
+    let demos = [("Simple Animation", "BasicAnimationViewController"), ("Basic Constraint Demo", "BasicConstraintAnimationViewController"), ("Advanced Constraint Demo", "AdvancedConstraintViewController"), ("Complex Demo", "ComplexDemoViewController")]
     
     // MARK: - Table view data source
 
