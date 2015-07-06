@@ -15,9 +15,9 @@ class BasicConstraintAnimationViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        widthConstraint.constant = 400
         
         UIView.animateWithDuration(1.0) {
+            self.widthConstraint.constant = 400
             // changes made in here will be animated
             self.view.layoutIfNeeded()
         }

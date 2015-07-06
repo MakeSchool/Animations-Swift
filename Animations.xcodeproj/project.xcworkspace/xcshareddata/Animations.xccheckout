@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F7EA8033-6EA9-4465-A225-1C452A369ED7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Animations</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3BB0B3ED55707D2EECDB0F58EF1389E09A92F6E9</key>
 		<string>github.com:MakeSchool/Animations-Swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Animations.xcodeproj</string>
+	<string>Animations.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3BB0B3ED55707D2EECDB0F58EF1389E09A92F6E9</key>
