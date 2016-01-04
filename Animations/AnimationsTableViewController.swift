@@ -23,14 +23,14 @@ class AnimationsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Default") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Default")!
         cell.textLabel?.text = demos[indexPath.row].0
-        
-        return cell;
+    
+        return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(demos[indexPath.row].1) as! UIViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(demos[indexPath.row].1)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

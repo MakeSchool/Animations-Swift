@@ -147,7 +147,7 @@ class ComplexDemoViewController: UIViewController {
         overlayView = UIView()
         overlayView.backgroundColor = UIColor.darkGrayColor()
         overlayView.alpha = 0.0
-        overlayView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.insertSubview(overlayView, atIndex: view.subviews.count-1)
         
