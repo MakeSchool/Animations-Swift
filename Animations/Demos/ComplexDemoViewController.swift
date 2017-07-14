@@ -41,7 +41,7 @@ class ComplexDemoViewController: UIViewController {
     
     // MARK: Drag Handling
     
-    func startDragging(initalPosition: CGPoint) {
+    func startDragging(_ initalPosition: CGPoint) {
         draggingPopup = true
         
         attachmentBehavior = UIAttachmentBehavior(
@@ -63,7 +63,7 @@ class ComplexDemoViewController: UIViewController {
         dynamicItemBehavior = UIDynamicItemBehavior(items: [popupView])
         
         dynamicItemBehavior.action = {() -> Void in
-            if (!CGRectIntersectsRect(self.popupView.frame, self.view.frame)) {
+            if (!self.popupView.frame.intersects(self.view.frame)) {
                 self.closeTransactionViewTapped(self)
                 self.draggingPopup = false
                 self.animator.removeAllBehaviors()
@@ -96,18 +96,18 @@ class ComplexDemoViewController: UIViewController {
     
     // MARK: Touch Handling
     
-    func handlePan(recognizer: UIPanGestureRecognizer) {
-        if (recognizer.state == .Began) {
-            if (!CGRectContainsPoint(popupView.frame,recognizer.locationInView(self.view))) {
+    func handlePan(_ recognizer: UIPanGestureRecognizer) {
+        if (recognizer.state == .began) {
+            if (!popupView.frame.contains(recognizer.location(in: self.view))) {
                 return
             }
             
-            startDragging(recognizer.locationInView(self.view))
-        } else if (recognizer.state == .Changed) {
+            startDragging(recognizer.location(in: self.view))
+        } else if (recognizer.state == .changed) {
             if (draggingPopup && attachmentBehavior != nil) {
-                attachmentBehavior.anchorPoint = recognizer.locationInView(self.view)
+                attachmentBehavior.anchorPoint = recognizer.location(in: self.view)
             }
-        } else if (recognizer.state == .Ended || recognizer.state == .Cancelled) {
+        } else if (recognizer.state == .ended || recognizer.state == .cancelled) {
             if !(draggingPopup) {
                 return
             }
@@ -121,56 +121,56 @@ class ComplexDemoViewController: UIViewController {
     
     func toggleExpandMenu() {
         viewExpanded = !viewExpanded
-        heightConstraint.active = !viewExpanded
+        heightConstraint.isActive = !viewExpanded
         
-        UIView.animateWithDuration(0.25, delay: 0.0, options: .CurveEaseInOut, animations: { () -> Void in
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
             for button in self.buttons {
                 button.alpha = self.viewExpanded ? 1.0 : 0.0
             }
             
-            self.arrowButton.transform = self.viewExpanded ? CGAffineTransformMakeRotation(CGFloat(M_PI_2)) : CGAffineTransformMakeRotation(0)
+            self.arrowButton.transform = self.viewExpanded ? CGAffineTransform(rotationAngle: CGFloat.pi / 2) : CGAffineTransform(rotationAngle: 0)
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
     
     func presentTransaction() {
         // Add gesture recognizer to detect touches
-        gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ComplexDemoViewController.handlePan(_:)))
         self.view.addGestureRecognizer(gestureRecognizer)
         
         // Present TransactionView (loaded from separate interface file)
-        popupView = NSBundle.mainBundle().loadNibNamed("TransactionView", owner: self, options: nil)[0] as! UIView
-        popupView.center = CGPointMake(-300, -300)
+        popupView = Bundle.main.loadNibNamed("TransactionView", owner: self, options: nil)?[0] as! UIView
+        popupView.center = CGPoint(x: -300, y: -300)
         self.view.addSubview(popupView)
         
         // Load and add overlay view
         overlayView = UIView()
-        overlayView.backgroundColor = UIColor.darkGrayColor()
+        overlayView.backgroundColor = UIColor.darkGray
         overlayView.alpha = 0.0
         overlayView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.insertSubview(overlayView, atIndex: view.subviews.count-1)
+        self.view.insertSubview(overlayView, at: view.subviews.count-1)
         
         self.view.addConstraint(NSLayoutConstraint(item: overlayView,
-            attribute: .Width, relatedBy: .Equal,
-            toItem: overlayView.superview, attribute: .Width,
+            attribute: .width, relatedBy: .equal,
+            toItem: overlayView.superview, attribute: .width,
             multiplier: 1, constant: 0))
         
         self.view.addConstraint(NSLayoutConstraint(item: overlayView,
-            attribute: .Height, relatedBy: .Equal,
-            toItem: overlayView.superview, attribute: .Height,
+            attribute: .height, relatedBy: .equal,
+            toItem: overlayView.superview, attribute: .height,
             multiplier: 1, constant: 0))
         
         // Force Layout pass, so that adding of the background view is not animated
         view.layoutIfNeeded()
         
         // Animate popover onto screen, blend in overlay
-        UIView.animateWithDuration(0.75, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1.0, options: .CurveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: 0.75, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1.0, options: .curveEaseIn, animations: { () -> Void in
             self.popupView.center = self.view.center
             self.overlayView.alpha = 0.85
             self.view.layoutIfNeeded()
             }, completion: { (Bool) -> Void in
-                self.snapBehavior = UISnapBehavior(item: self.popupView, snapToPoint: self.view.center)
+                self.snapBehavior = UISnapBehavior(item: self.popupView, snapTo: self.view.center)
                 self.animator.addBehavior(self.snapBehavior)
         })
     }
@@ -179,7 +179,7 @@ class ComplexDemoViewController: UIViewController {
         popupView.removeFromSuperview()
         view.removeGestureRecognizer(gestureRecognizer)
         
-        UIView.animateWithDuration(0.35, animations: { () -> Void in
+        UIView.animate(withDuration: 0.35, animations: { () -> Void in
             self.overlayView.alpha = 0.0
             }, completion: { (Bool) -> Void in
                 self.overlayView.removeFromSuperview()
@@ -188,15 +188,15 @@ class ComplexDemoViewController: UIViewController {
     
     // MARK: Button Callbacks
     
-    @IBAction func animateButtonTapped(sender: AnyObject) {
+    @IBAction func animateButtonTapped(_ sender: AnyObject) {
         toggleExpandMenu()
     }
  
-    @IBAction func transactionButtonTapped(sender: AnyObject) {
+    @IBAction func transactionButtonTapped(_ sender: AnyObject) {
         presentTransaction()
     }
     
-    @IBAction func closeTransactionViewTapped(sender: AnyObject) {
+    @IBAction func closeTransactionViewTapped(_ sender: AnyObject) {
         hideTransaction()
     }
 }

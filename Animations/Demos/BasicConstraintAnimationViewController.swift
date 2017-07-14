@@ -12,15 +12,15 @@ class BasicConstraintAnimationViewController: UIViewController {
 
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         
-        UIView.animateWithDuration(1.0) {
+        UIView.animate(withDuration: 1.0, animations: {
             self.widthConstraint.constant = 400
             // changes made in here will be animated
             self.view.layoutIfNeeded()
-        }
+        }) 
     }
     
 }

@@ -13,19 +13,19 @@ class AdvancedConstraintViewController: UIViewController {
     @IBOutlet var initialConstraints: [NSLayoutConstraint]!
     @IBOutlet var finalConstraints: [NSLayoutConstraint]!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         for constraint in initialConstraints {
-            constraint.active = false
+            constraint.isActive = false
         }
         
         for constraint in finalConstraints {
-            constraint.active = true
+            constraint.isActive = true
         }
         
-        UIView.animateWithDuration(1.0) {
+        UIView.animate(withDuration: 1.0, animations: {
             self.view.layoutIfNeeded()
-        }
+        }) 
     }
 }

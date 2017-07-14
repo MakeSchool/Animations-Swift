@@ -12,16 +12,16 @@ class BasicAnimationViewController: UIViewController {
 
     @IBOutlet weak var square: UIView!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animateWithDuration(1.0) {
+        UIView.animate(withDuration: 1.0, animations: {
             // changes made in here will be animated
-            self.square.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            self.square.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
             self.square.alpha = 0.2
-            self.square.backgroundColor = UIColor.blueColor()
-            self.square.transform = CGAffineTransformMakeScale(3, 3)
-        }
+            self.square.backgroundColor = UIColor.blue
+            self.square.transform = CGAffineTransform(scaleX: 3, y: 3)
+        }) 
     }
     
 }
