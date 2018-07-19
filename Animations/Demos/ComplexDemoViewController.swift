@@ -96,7 +96,7 @@ class ComplexDemoViewController: UIViewController {
     
     // MARK: Touch Handling
     
-    func handlePan(_ recognizer: UIPanGestureRecognizer) {
+    @objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
         if (recognizer.state == .began) {
             if (!popupView.frame.contains(recognizer.location(in: self.view))) {
                 return
