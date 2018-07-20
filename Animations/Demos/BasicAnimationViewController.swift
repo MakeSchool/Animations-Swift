@@ -17,11 +17,12 @@ class BasicAnimationViewController: UIViewController {
         
         UIView.animate(withDuration: 1.0, animations: {
             // changes made in here will be animated
-            self.square.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            var transforms = CGAffineTransform(rotationAngle: CGFloat.pi)
+            transforms = transforms.scaledBy(x: 3, y: 3)
+            self.square.transform = transforms
             self.square.alpha = 0.2
             self.square.backgroundColor = UIColor.blue
-            self.square.transform = CGAffineTransform(scaleX: 3, y: 3)
-        }) 
+        })
     }
     
 }
